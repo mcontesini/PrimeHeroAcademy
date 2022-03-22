@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.6 on win32)" generated="20220322 17:54:20.284" rpa="false" schemaversion="2">
+<suite id="s1" name="Cenarios" source="E:\projects\emily\Prime\Refactoring\testes\features\cenarios.robot">
+<test id="s1-t1" name="Caso de teste 5: Adicionar Cliente">
+<kw name="Abrir o navegador" library="hooks" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220322 17:54:20.928" level="INFO">Opening browser 'Chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20220322 17:54:20.928" endtime="20220322 17:54:29.117"/>
+</kw>
+<status status="PASS" starttime="20220322 17:54:20.928" endtime="20220322 17:54:29.118"/>
+</kw>
+<kw name="Acessar a página home do site Automation Practice" library="keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220322 17:54:29.120" level="INFO">Opening url 'http://automationpractice.com/index.php'</msg>
+<status status="PASS" starttime="20220322 17:54:29.120" endtime="20220322 17:54:31.687"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${TITULO_HOMEPAGE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220322 17:54:31.697" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20220322 17:54:31.687" endtime="20220322 17:54:31.697"/>
+</kw>
+<status status="PASS" starttime="20220322 17:54:29.119" endtime="20220322 17:54:31.698"/>
+</kw>
+<kw name="Clicar em &quot;Sign in&quot;" library="keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220322 17:54:31.700" level="INFO">Clicking element 'xpath=//a[@class='login']'.</msg>
+<status status="PASS" starttime="20220322 17:54:31.699" endtime="20220322 17:54:34.133"/>
+</kw>
+<status status="PASS" starttime="20220322 17:54:31.698" endtime="20220322 17:54:34.133"/>
+</kw>
+<kw name="Informar um e-mail válido" library="keywords">
+<kw name="Email" library="FakerLibrary">
+<var>${E-MAIL}</var>
+<msg timestamp="20220322 17:54:34.135" level="INFO">${E-MAIL} = vanessalopez@example.com</msg>
+<status status="PASS" starttime="20220322 17:54:34.134" endtime="20220322 17:54:34.135"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<arg>${E-MAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220322 17:54:34.135" level="INFO">Typing text 'vanessalopez@example.com' into text field 'id=email_create'.</msg>
+<status status="PASS" starttime="20220322 17:54:34.135" endtime="20220322 17:54:34.218"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${E-MAIL}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220322 17:54:34.218" level="INFO">${E-MAIL} = vanessalopez@example.com</msg>
+<status status="PASS" starttime="20220322 17:54:34.218" endtime="20220322 17:54:34.218"/>
+</kw>
+<status status="PASS" starttime="20220322 17:54:34.134" endtime="20220322 17:54:34.218"/>
+</kw>
+<kw name="Clicar em &quot;Create an account&quot;" library="keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BOTAO_CRIAR_CONTA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220322 17:54:34.220" level="INFO">Clicking element 'id=SubmitCreate'.</msg>
+<status status="PASS" starttime="20220322 17:54:34.220" endtime="20220322 17:54:34.268"/>
+</kw>
+<status status="PASS" starttime="20220322 17:54:34.219" endtime="20220322 17:54:34.268"/>
+</kw>
+<kw name="Preencher os dados obrigatórios" library="keywords">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>60</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20220322 17:54:34.269" endtime="20220322 17:54:34.270"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${FIRST_NAME}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220322 17:54:34.270" endtime="20220322 17:54:36.447"/>
+</kw>
+<kw name="Name" library="FakerLibrary">
+<var>${NOME}</var>
+<doc>:example 'John Doe'</doc>
+<msg timestamp="20220322 17:54:36.448" level="INFO">${NOME} = Ethan Smith</msg>
+<status status="PASS" starttime="20220322 17:54:36.447" endtime="20220322 17:54:36.448"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FIRST_NAME}</arg>
+<arg>${NOME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220322 17:54:36.448" level="INFO">Typing text 'Ethan Smith' into text field 'id=customer_firstname'.</msg>
+<status status="PASS" starttime="20220322 17:54:36.448" endtime="20220322 17:54:36.533"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${NOME}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220322 17:54:36.533" level="INFO">${NOME} = Ethan Smith</msg>
+<status status="PASS" starttime="20220322 17:54:36.533" endtime="20220322 17:54:36.533"/>
+</kw>
+<kw name="Last Name" library="FakerLibrary">
+<var>${SOBRENOME}</var>
+<msg timestamp="20220322 17:54:36.534" level="INFO">${SOBRENOME} = Norris</msg>
+<status status="PASS" starttime="20220322 17:54:36.533" endtime="20220322 17:54:36.534"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LAST_NAME}</arg>
+<arg>${SOBRENOME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220322 17:54:36.534" level="INFO">Typing text 'Norris' into text field 'id=customer_lastname'.</msg>
+<status status="PASS" starttime="20220322 17:54:36.534" endtime="20220322 17:54:36.606"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${SOBRENOME}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220322 17:54:36.607" level="INFO">${SOBRENOME} = Norris</msg>
+<status status="PASS" starttime="20220322 17:54:36.606" endtime="20220322 17:54:36.607"/>
+</kw>
+<kw name="Address" library="FakerLibrary">
+<var>${ENDEREÇO}</var>
+<doc>:example: '791 Crist Parks, Sashabury, IL 86039-9874'</doc>
+<msg timestamp="20220322 17:54:36.607" level="INFO">${ENDEREÇO} = 775 Miller Alley Apt. 157
+New Thomasmouth, AR 48390</msg>
+<status status="PASS" starttime="20220322 17:54:36.607" endtime="20220322 17:54:36.607"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${ADDRESS}</arg>
+<arg>${ENDEREÇO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220322 17:54:36.608" level="INFO">Typing text '775 Miller Alley Apt. 157
+New Thomasmouth, AR 48390' into text field 'id=address1'.</msg>
+<status status="PASS" starttime="20220322 17:54:36.608" endtime="20220322 17:54:38.524"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${ENDEREÇO}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220322 17:54:38.525" level="INFO">${ENDEREÇO} = 775 Miller Alley Apt. 157
+New Thomasmouth, AR 48390</msg>
+<status status="PASS" starttime="20220322 17:54:38.524" endtime="20220322 17:54:38.525"/>
+</kw>
+<kw name="City" library="FakerLibrary">
+<var>${CIDADE}</var>
+<doc>:example: 'Sashabury'</doc>
+<msg timestamp="20220322 17:54:38.525" level="INFO">${CIDADE} = Craigburgh</msg>
+<status status="PASS" starttime="20220322 17:54:38.525" endtime="20220322 17:54:38.525"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CITY}</arg>
+<arg>${CIDADE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220322 17:54:38.525" level="INFO">Typing text 'Craigburgh' into text field 'id=city'.</msg>
+<status status="PASS" starttime="20220322 17:54:38.525" endtime="20220322 17:54:38.598"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${CIDADE}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220322 17:54:38.599" level="INFO">${CIDADE} = Craigburgh</msg>
+<status status="PASS" starttime="20220322 17:54:38.598" endtime="20220322 17:54:38.599"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ESTADO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220322 17:54:38.599" level="INFO">Clicking element 'xpath=//select[@id='id_state']/child::option[@value='2']'.</msg>
+<status status="PASS" starttime="20220322 17:54:38.599" endtime="20220322 17:54:38.633"/>
+</kw>
+<kw name="Postalcode" library="FakerLibrary">
+<var>${CEP}</var>
+<msg timestamp="20220322 17:54:38.633" level="INFO">${CEP} = 74607</msg>
+<status status="PASS" starttime="20220322 17:54:38.633" endtime="20220322 17:54:38.633"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${POSTAL_CODE}</arg>
+<arg>${CEP}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220322 17:54:38.634" level="INFO">Typing text '74607' into text field 'id=postcode'.</msg>
+<status status="PASS" starttime="20220322 17:54:38.633" endtime="20220322 17:54:38.707"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${CEP}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220322 17:54:38.708" level="INFO">${CEP} = 74607</msg>
+<status status="PASS" starttime="20220322 17:54:38.707" endtime="20220322 17:54:38.708"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${PAIS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220322 17:54:38.708" level="INFO">Clicking element 'xpath=//select[@id='id_country']/child::option[@value='21']'.</msg>
+<status status="PASS" starttime="20220322 17:54:38.708" endtime="20220322 17:54:38.736"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PHONE}</arg>
+<arg>011999994444</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220322 17:54:38.736" level="INFO">Typing text '011999994444' into text field 'id=phone_mobile'.</msg>
+<status status="PASS" starttime="20220322 17:54:38.736" endtime="20220322 17:54:38.809"/>
+</kw>
+<kw name="Address" library="FakerLibrary">
+<var>${ENDEREÇO}</var>
+<doc>:example: '791 Crist Parks, Sashabury, IL 86039-9874'</doc>
+<msg timestamp="20220322 17:54:38.810" level="INFO">${ENDEREÇO} = 7256 Palmer Islands
+Jenniferside, VA 48740</msg>
+<status status="PASS" starttime="20220322 17:54:38.809" endtime="20220322 17:54:38.810"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${ADDRESS}</arg>
+<arg>${ENDEREÇO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220322 17:54:38.810" level="INFO">Typing text '7256 Palmer Islands
+Jenniferside, VA 48740' into text field 'id=address1'.</msg>
+<status status="PASS" starttime="20220322 17:54:38.810" endtime="20220322 17:54:40.413"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${ENDEREÇO}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220322 17:54:40.414" level="INFO">${ENDEREÇO} = 7256 Palmer Islands
+Jenniferside, VA 48740</msg>
+<status status="PASS" starttime="20220322 17:54:40.413" endtime="20220322 17:54:40.414"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220322 17:54:40.517" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-43.png"&gt;&lt;img src="selenium-screenshot-43.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220322 17:54:40.414" endtime="20220322 17:54:40.517"/>
+</kw>
+<kw name="Password" library="FakerLibrary">
+<var>${SENHA}</var>
+<doc>Generate a random password of the specified ``length``.</doc>
+<msg timestamp="20220322 17:54:40.517" level="INFO">${SENHA} = *)7R!pLhS(</msg>
+<status status="PASS" starttime="20220322 17:54:40.517" endtime="20220322 17:54:40.517"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASSWORD}</arg>
+<arg>${SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220322 17:54:40.518" level="INFO">Typing text '*)7R!pLhS(' into text field 'id=passwd'.</msg>
+<status status="PASS" starttime="20220322 17:54:40.517" endtime="20220322 17:54:40.596"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${SENHA}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220322 17:54:40.596" level="INFO">${SENHA} = *)7R!pLhS(</msg>
+<status status="PASS" starttime="20220322 17:54:40.596" endtime="20220322 17:54:40.596"/>
+</kw>
+<status status="PASS" starttime="20220322 17:54:34.269" endtime="20220322 17:54:40.596"/>
+</kw>
+<kw name="Submeter cadastro" library="keywords">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220322 17:54:40.716" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-44.png"&gt;&lt;img src="selenium-screenshot-44.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220322 17:54:40.597" endtime="20220322 17:54:40.716"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BOTAO_REGISTRAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220322 17:54:40.717" level="INFO">Clicking element 'id=submitAccount'.</msg>
+<status status="PASS" starttime="20220322 17:54:40.717" endtime="20220322 17:54:42.853"/>
+</kw>
+<status status="PASS" starttime="20220322 17:54:40.597" endtime="20220322 17:54:42.854"/>
+</kw>
+<kw name="Conferir se o cadastro foi efetuado com sucesso" library="keywords">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${MY_ACCOUNT}</arg>
+<arg>MY ACCOUNT</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220322 17:54:42.855" level="INFO">Verifying element 'xpath=//div[@id='center_column']/child::h1[@class='page-heading']' contains exact text 'MY ACCOUNT'.</msg>
+<status status="PASS" starttime="20220322 17:54:42.855" endtime="20220322 17:54:42.881"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220322 17:54:43.043" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-45.png"&gt;&lt;img src="selenium-screenshot-45.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220322 17:54:42.881" endtime="20220322 17:54:43.043"/>
+</kw>
+<status status="PASS" starttime="20220322 17:54:42.854" endtime="20220322 17:54:43.043"/>
+</kw>
+<kw name="Fechar o navegador" library="hooks" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220322 17:54:43.052" endtime="20220322 17:54:45.166"/>
+</kw>
+<status status="PASS" starttime="20220322 17:54:43.043" endtime="20220322 17:54:45.166"/>
+</kw>
+<tag>@Teste5</tag>
+<status status="PASS" starttime="20220322 17:54:20.928" endtime="20220322 17:54:45.166"/>
+</test>
+<status status="PASS" starttime="20220322 17:54:20.284" endtime="20220322 17:54:45.174"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">@Teste5</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Cenarios">Cenarios</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
